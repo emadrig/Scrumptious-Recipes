@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe_object.title }} - Scrumptious Recipes </title>
+    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href={% url 'recipe_list'%}>Main Page</a>
+            <a href={% url 'create_recipe'%} class="white-text">Create a Recipe</a>
+            <a href={% url 'edit_recipe'%} class="white-text">Create a Recipe</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1>{{ recipe_object.title}}</h1>
+
+        <img src="{{ recipe_object.picture }}">
+
+        <div>4.3 stars</div>
+        <p> {{recipe_object.description}}</p>
+
+        <h2>Ingredients</h2>
+
+        <table>
+            <thead>
+                <th>Amount</th>
+                <th>Food Item</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1 cup</td>
+                    <td>Green Beans</td>
+                </tr>
+                <tr>
+                    <td>3 ears</td>
+                    <td>Fresh corn</td>
+                </tr>
+                <tr>
+                    <td>2 cups</td>
+                    <td>Tomatillo Salsa</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Corn tortillas</td>
+                </tr>
+                <tr>
+                    <td>0.5 cups</td>
+                    <td>Cotija Cheese</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Steps</h2>
+
+        <ol>
+            {% for step in recipe_ojbect.steps.all %}
+                <li>{{ step.instruction}}</li>
+            {% endfor %}
+        </ol>
+
+        <footer>Made with love by Scrumptious Recipes</footer>
+
+    </main>
+
+</body>
+</html>

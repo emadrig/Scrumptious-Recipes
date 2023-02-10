@@ -1,0 +1,62 @@
+
+h1{
+    color: darkgreen
+}
+
+.recipe-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+main{
+    padding: 16px;
+}
+
+footer{
+    padding: 24px 0px;
+}
+
+img{
+    height: 200px;
+}
+
+nav{
+    padding: 16px;
+    border-bottom: solid black 1px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+footer {
+    /* position:fixed; */
+    /* left:16px; */
+    bottom:0;
+    width:100%;
+    background-color: rgb(7, 182, 7);
+}
+
+header{
+    background-color: rgb(245, 96, 42);
+    color: white;
+}
+
+.white-text{
+    color: white;
+    text-decoration: none;
+}
+
+.recipe-name{
+    color: rgb(7, 182, 7);
+}
